@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+/*
+최초작성일 : 2024.09.19
+최초작성자 : 정종민
+
+수정 일자 : 2024.09.19
+수정파일 작성자 : 정종민
+수정 사유 : 
+*/
+
+
+/* 공통 */
+#wrap {
+  min-width: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1248px;
+  padding: 0 5%;
+  margin: 0 auto;
+}
+
+
+
+/* header */
+
+header {
+  height: 100px;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+header .gnb {
+  display: flex;
+}
+
+header .gnb>li {
+  position: relative;
+}
+
+header .gnb>li>a {
+  display: block;
+  padding: 40px 30px 40px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+header .gnb a:hover {
+  text-decoration: underline;
+}
+
+header .gnb .depth2 {
+  height: 150px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  z-index: 99;
+  padding-top: 20px;
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+header .gnb .depth2 li a {
+  display: block;
+  padding-bottom: 20px;
+}
+
+header .depth2-bg {
+  width: 100%;
+  height: 180px;
+  background-color: #ddd;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 98;
+  opacity: 0.7;
+}
+
+header .utill {
+  padding: 40px 40px 10px;
+  display: flex;
+  gap: 40px;
+}
+
+header .mgnb-wrap {
+  display: none;
+}
+
+header .ham {
+  display: none;
+}
+
+/* 모바일 */
+
+@media screen and (max-width : 768px) {
+  header .gnb {
+    display: none;
+  }
+
+  header .utill {
+    display: none;
+  }
+
+
+  header .mgnb-wrap {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999;
+    padding: 20px 5% 0;
+  }
+
+  header .mgnb-wrap .mgnb {
+    border-top: 2px solid #AFAEAE;
+  }
+
+
+  header .mgnb-wrap .mgnb>li {
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  header .mgnb-wrap .mgnb .mdepth2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
+
+  .mgnb-wrap .mutill {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  header .ham {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+  }
+
+  .mdepth2 li {
+    padding: 10px 0 10px 20px;
+  }
+
+  header .mgnb a:hover {
+    text-decoration: underline;
+  }
+
+  header .mgnb-close {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+}
+
+/* footer */
+
+footer {
+  padding: 55px;
+  font-size: 1.6rem;
+}
+
+footer .footer-top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #999;
+  padding-bottom: 55px;
+}
+
+footer .footer-top h3 {
+  padding-right: 120px;
+}
+
+footer .footer-top ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+footer .footer-bottom {
+  padding: 55px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-bottom address {
+  padding-bottom: 10px;
+}
+
+
+footer .sns ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+footer .sns img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+footer .m-logo{
+  display: none;
+}
+
+/* 모바일 */
+@media screen and (max-width : 768px) {
+  footer h3 img{
+    display: none;
+  }
+  
+  footer{
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    padding: 20px;
+    text-wrap: nowrap;
+  }
+
+  footer .inner{
+    padding: 0;
+  }
+
+  footer .footer-top {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  footer .footer-top ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  footer .footer-bottom {
+    padding: 15px 0;
+    display: block;
+    align-items: center;
+  }
+
+  footer .sns .m-logo{
+    display: block;
+  }
+
+  footer .sns .m-logo img{
+    width: 130px;
+    height: 50px;
+  }
+  footer .sns{
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  footer .sns img {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  footer .sns ul{
+    padding-top: 20px;
+  }
+}
+
+/* go-top */
+
+.go-top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background-color: #FFA4A4;
+  border-radius: 50%;
+
+  width: 60px;
+  height: 60px;
+}
+
+.go-top p {
+  display: block;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* 모바일 */
+@media screen and (max-width : 768px) {
+  .go-top {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .go-top p{
+    font-size: 0.8rem;
+  }
+}
+
